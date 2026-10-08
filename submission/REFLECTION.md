@@ -99,7 +99,7 @@ Kết quả thực tế xác nhận T4 chạy được SFT đủ 125 bước v�
 
 ## 7. Phạm vi bài nộp
 
-Đã hoàn thành phần lõi và quét β. NB3b và NB5 đang được bổ sung; chưa thực hiện NB6, NB7, giám khảo API hoặc đẩy model lên Hugging Face.
+Đã hoàn thành phần lõi và quét β. NB5 đã hoàn thành; NB3b đang được bổ sung; chưa thực hiện NB6, NB7, giám khảo API hoặc đẩy model lên Hugging Face.
 
 ---
 
@@ -112,3 +112,9 @@ Hàm `my_dpo_loss` dùng `-logsigmoid(beta * ((pc - rc) - (pr - rr))).mean()`. L
 SFT chạy đủ 1.000 mẫu, một epoch với 125 bước tối ưu; loss trung bình cuối là 1,3602. Adapter có 33.030.144 tham số được huấn luyện. Mô hình SFT đã được gộp và lưu tại `/content/lab22/models/sft-merged`, sau đó NB3 nạp chính mô hình này. Khi thử quicksort, câu trả lời giải thích đúng bước chọn pivot, chia nhóm và đệ quy, nhưng xuất hiện hai thẻ `</tool_call>` thừa. Vì vậy loss giảm chưa bảo đảm đầu ra sạch định dạng.
 
 NB2 lưu 800 cặp train và 100 cặp eval, kiểm tra không trùng prompt. Chosen có trung vị 94 token, rejected 86 token; chosen dài hơn trong 65,9% số cặp. Tôi đọc ba cặp được in ra. Ở câu yêu cầu mười biến đổi hình ảnh, chosen đánh số và trình bày trước–thay đổi–sau rõ hơn rejected. Ở câu phân loại phản ứng tiếng Tây Ban Nha, hai nhãn “Thô bạo” và “Bạo lực” gần nghĩa nhưng chưa khớp nhãn mong muốn, nên đây là preference nhiễu. Ở câu đặt lịch đánh giá giọng hát, cả hai phản hồi đều tuyên bố đã đặt lịch dù không thực hiện công cụ; rejected còn thêm chi tiết đường dẫn và người phụ trách chưa có căn cứ. Chosen không luôn là đáp án hoàn hảo. Tôi giữ nguyên bộ chia để đối chiếu với hướng dẫn, đồng thời cần kiểm tra thiên vị độ dài trong NB4.
+
+## NB5 — Triển khai GGUF Q4_K_M
+
+Ảnh: `screenshots/06-gguf-smoke.png`; dữ liệu: `data/eval/deploy_meta.json`. Tôi nạp adapter DPO trên SFT đã gộp ở fp16 và kiểm tra có 504 tensor LoRA trước khi gộp. File Q4_K_M có dung lượng 2.497,3 MB. Tên file `gguf_gguf/sft-merged.Q4_K_M.gguf` kế thừa tên mô hình gốc, nhưng quá trình xuất đã nạp và gộp adapter DPO, không xuất riêng SFT.
+
+HF và GGUF dùng cùng chat template (thinking tắt), cùng prompt Bubble Sort, greedy và tối đa 160 token. GGUF sinh 72 token, tổng cả prompt 97 token. Cả hai mô tả so sánh hai phần tử kề nhau, đổi chỗ khi sai thứ tự và lặp đến khi danh sách đã sắp xếp. GGUF dùng “hoán đổi” thay cho “đổi chỗ”; nội dung chính tương tự. Đây là kiểm tra khả năng chạy một prompt, chưa chứng minh chất lượng tương đương trên tập lớn. Cả hai còn hai thẻ `</tool_call>` và chỉ có hai câu dù prompt yêu cầu ba câu; lỗi tuân thủ này đã tồn tại ở HF, nên không quy hết cho lượng tử hóa.
