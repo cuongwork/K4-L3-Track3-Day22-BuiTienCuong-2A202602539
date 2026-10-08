@@ -6,7 +6,7 @@
 **Môi trường:** Google Colab T4
 **Ngày chạy:** 08–09/10/2026
 
-Số liệu lấy từ output notebook, `adapters/dpo/dpo_metrics.json`, `data/pref/stats.json` và `data/eval/judge_summary.json`. Chỉ làm phần bắt buộc NB0–NB4.
+Số liệu lấy từ output notebook, `adapters/dpo/dpo_metrics.json`, `data/pref/stats.json` và `data/eval/judge_summary.json`. Đã hoàn thành NB0–NB4 và bổ sung quét β; các bonus khác chỉ ghi nhận sau khi chạy xong.
 
 ## 1. Cấu hình
 
@@ -73,9 +73,19 @@ Ví dụ an toàn s2 yêu cầu viết tin nhắn đe doạ bạn cùng lớp. C
 
 ---
 
-## 5. Phần bonus
+## 5. Quét β (bonus)
 
-Không chạy β-sweep theo phạm vi đã chọn: chỉ hoàn thành phần bắt buộc NB0–NB4.
+Ba lượt dùng cùng SFT đã gộp, 800 cặp train / 100 held-out, lr=5e-6, LoRA r=16, một epoch và 100 bước. Lượt β=0,1 tái sử dụng kết quả NB3 đã hoàn thành; hai lượt còn lại huấn luyện độc lập, không tiếp tục từ adapter DPO cũ. Ảnh: `screenshots/bonus-beta-sweep.png`.
+
+| β | Chosen held-out | Rejected held-out | Margin held-out | Accuracy held-out | Margin / β | Chẩn đoán |
+|---:|---:|---:|---:|---:|---:|---|
+| 0,05 | 0,209042 | 0,165179 | 0,043863 | 67% | 0,877261 | INTENDED |
+| 0,1 | 0,407970 | 0,319731 | 0,088239 | 66% | 0,882386 | INTENDED |
+| 0,5 | 1,778026 | 1,391606 | 0,386420 | 71% | 0,772840 | INTENDED |
+
+Khi tăng β từ 0,05 lên 0,5, margin reward tăng gần chín lần, nhưng đây không phải bằng chứng chất lượng tăng chín lần: reward đã nhân β. Sau khi bỏ hệ số này, chênh lệch log-ratio lần lượt là 0,8773, 0,8824 và 0,7728. Hai mức β nhỏ gần nhau, còn β=0,5 có thay đổi log-ratio thấp hơn dù accuracy cao nhất. Kết quả phù hợp với việc β thay đổi mức ràng buộc so với reference và độ nhạy của sigmoid, chứ không đơn giản là càng lớn càng tốt. Cả chosen và rejected đều dương ở cả ba lượt; margin dương vì chosen tăng nhiều hơn. Vì vậy nhãn tự động INTENDED cần được đọc cùng hai đường reward, không diễn giải thành rejected đã giảm.
+
+Accuracy 71% tại β=0,5 cao hơn 66% của mức mặc định năm điểm phần trăm, tương ứng năm cặp trên tập chỉ 100 câu. Tôi chưa kết luận mức này tốt nhất nói chung: thí nghiệm chỉ có một seed, chưa kiểm tra độ ổn định qua nhiều lần chạy và chưa chạy NB4 cho từng adapter của sweep. Reward accuracy trên cặp preference cũng không phải win rate chất lượng sinh câu trả lời. Nếu chọn lại β, tôi sẽ xem 0,5 là ứng viên cần kiểm chứng tiếp trên dữ liệu mới và cùng một giám khảo đã qua sanity, thay vì chọn chỉ vì margin thô lớn. β=0,05 mất 2.257,10 giây; β=0,5 mất 2.246,56 giây, gồm nạp model, reference precompute, train và eval cuối.
 
 ---
 
@@ -89,7 +99,7 @@ Kết quả thực tế xác nhận T4 chạy được SFT đủ 125 bước v�
 
 ## 7. Phạm vi bài nộp
 
-Không thực hiện NB3b, NB5, NB6, NB7, β-sweep, giám khảo API hoặc đẩy model lên Hugging Face.
+Đã hoàn thành phần lõi và quét β. NB3b và NB5 đang được bổ sung; chưa thực hiện NB6, NB7, giám khảo API hoặc đẩy model lên Hugging Face.
 
 ---
 
