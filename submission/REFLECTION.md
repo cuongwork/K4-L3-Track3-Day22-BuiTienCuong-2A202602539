@@ -88,15 +88,11 @@ _Nếu không chạy: viết giả thuyết 3 câu về điều bạn dự đoá
 
 ---
 
-## 6. Một quyết định quan trọng nhất (≥ 150 từ)
+## 6. Một quyết định quan trọng nhất
 
-> Chọn **một** quyết định (β, tốc độ học, lượng dữ liệu, giám khảo, tier, biến thể loss…):
-> 1. Phương án thay thế là gì?
-> 2. Vì sao chọn phương án này?
-> 3. Kết quả xác nhận hay làm bạn bất ngờ?
-> 4. Làm lại thì bạn đổi gì?
+Tôi chọn Colab T4 miễn phí và giữ nguyên quy mô phần bắt buộc: SFT 1.000 mẫu, preference 800 train và 100 eval, thay vì giảm số mẫu để chạy nhanh hơn. Phương án thay thế là dùng GPU lớn hơn hoặc giảm dữ liệu. GPU lớn hơn có thể rút ngắn thời gian nhưng cần tài nguyên trả phí; giảm dữ liệu làm thí nghiệm khác cấu hình hướng dẫn và làm kết quả held-out khó đối chiếu. Tôi dùng mô hình Qwen3-4B lượng tử hoá 4 bit với LoRA để phù hợp giới hạn bộ nhớ của T4. Reference của DPO là SFT đã gộp, nên thay đổi sau DPO được đo so với đúng điểm xuất phát đã tinh chỉnh tiếng Việt.
 
-_Trả lời ở đây._
+Kết quả thực tế xác nhận T4 chạy được SFT đủ 125 bước với 33.030.144 tham số trainable và loss trung bình 1,3602; việc gộp SFT cũng hoàn tất. Điều làm tôi bất ngờ là chi phí thời gian của các bước ngoài huấn luyện: tải trọng số 16 bit để gộp và tính reference log-prob đều mất nhiều phút. Việc tăng batch precompute từ một lên bốn không cho tốc độ tốt như tôi dự đoán trên T4. Vì vậy tối ưu thời gian phải dựa vào đo thực tế, không chỉ dựa vào batch lớn hơn. Nếu làm lại, tôi sẽ bắt đầu sớm hơn, giữ cấu hình ổn định, lưu output sau từng giai đoạn và dành thời gian riêng cho sinh 58 cặp câu trả lời cùng hai reward model. Tôi không suy ra DPO tốt hơn SFT chỉ từ loss SFT; kết luận đó phải dựa vào NB3 và NB4 sau khi chạy xong.
 
 ---
 
