@@ -3,7 +3,7 @@
 **Tên:** Bùi Tiến Cường
 **MSSV:** 2A202602539
 **Khoá:** K4 · Track 3
-**Tier dự kiến:** Colab T4 (chưa có kết quả chạy)
+**Tier đã chạy:** Colab T4
 **Ngày chuẩn bị:** 2026-10-08
 
 > Mọi con số dưới đây lấy từ file do notebook sinh ra (`adapters/dpo/dpo_metrics.json`,
@@ -15,14 +15,14 @@
 
 | Mục | Giá trị |
 |---|---|
-| GPU / VRAM | _<ví dụ: Colab T4 16 GB>_ |
-| Mô hình gốc | _<ví dụ: unsloth/Qwen3-4B-Instruct-2507-unsloth-bnb-4bit>_ |
-| Dữ liệu SFT | _<saillab/alpaca-vietnamese-cleaned · N mẫu · số epoch>_ |
-| Dữ liệu sở thích | _<sailor2/sea-ultrafeedback-onpolicy (vi) · N huấn luyện / N held-out>_ |
-| Chosen dài hơn rejected (NB2) | _<ví dụ: 65%>_ |
-| DPO: β / tốc độ học (lr) / số epoch | _<0.1 / 5e-6 / 1>_ |
+| GPU / VRAM | Tesla T4 · 14,563 GB VRAM (Unsloth báo) |
+| Mô hình gốc | unsloth/Qwen3-4B-Instruct-2507-unsloth-bnb-4bit |
+| Dữ liệu SFT | saillab/alpaca-vietnamese-cleaned · 1.000 mẫu · 1 epoch |
+| Dữ liệu sở thích | sailor2/sea-ultrafeedback-onpolicy (Vietnamese) · cấu hình 800 train / 100 held-out |
+| Chosen dài hơn rejected (NB2) | 65,9% (output NB2; chosen median 94 token, rejected 86 token) |
+| DPO: β / tốc độ học (lr) / số epoch | 0,1 / 5e-6 / 1 |
 | Giám khảo | _<rm:tên-mô-hình hoặc nhà-cung-cấp:tên-mô-hình; sanity accuracy>_ |
-| Chi phí | _<0 đồng (Colab miễn phí) / ...>_ |
+| Chi phí | 0 đồng · Colab miễn phí |
 
 ---
 
@@ -159,3 +159,13 @@ _Thành phần reward nào tăng trước (đúng định dạng hay đúng đá
 ## Điều bất ngờ nhất
 
 _(Tuỳ chọn, 1–3 câu)_
+
+## NB0 — Loss tự cài
+
+Hàm `my_dpo_loss` dùng `-logsigmoid(beta * ((pc - rc) - (pr - rr))).mean()`. Lần chạy Colab cho loss 0,6981 khớp tham chiếu; khi policy bằng reference, loss bằng 0,6931 và hai reward bằng 0. Nếu log-prob chosen giảm 3 nat nhưng rejected giảm 5 nat, margin trước beta vẫn tăng 2 nat; vì thế loss có thể giảm dù xác suất chosen giảm. Đây là likelihood displacement.
+
+## NB1–NB2 — Quan sát từ lần chạy Colab
+
+SFT chạy đủ 1.000 mẫu, một epoch với 125 bước tối ưu; loss trung bình cuối là 1,3602. Adapter có 33.030.144 tham số được huấn luyện. Mô hình SFT đã được gộp và lưu tại `/content/lab22/models/sft-merged`, sau đó NB3 nạp chính mô hình này. Khi thử quicksort, câu trả lời giải thích đúng bước chọn pivot, chia nhóm và đệ quy, nhưng xuất hiện hai thẻ `</tool_call>` thừa. Vì vậy loss giảm chưa bảo đảm đầu ra sạch định dạng.
+
+NB2 lưu 800 cặp train và 100 cặp eval, kiểm tra không trùng prompt. Chosen có trung vị 94 token, rejected 86 token; chosen dài hơn trong 65,9% số cặp. Tôi đọc ba cặp được in ra. Ở câu yêu cầu mười biến đổi hình ảnh, chosen đánh số và trình bày trước–thay đổi–sau rõ hơn rejected. Ở câu phân loại phản ứng tiếng Tây Ban Nha, hai nhãn “Thô bạo” và “Bạo lực” gần nghĩa nhưng chưa khớp nhãn mong muốn, nên đây là preference nhiễu. Ở câu đặt lịch đánh giá giọng hát, cả hai phản hồi đều tuyên bố đã đặt lịch dù không thực hiện công cụ; rejected còn thêm chi tiết đường dẫn và người phụ trách chưa có căn cứ. Chosen không luôn là đáp án hoàn hảo. Tôi giữ nguyên bộ chia để đối chiếu với hướng dẫn, đồng thời cần kiểm tra thiên vị độ dài trong NB4.
