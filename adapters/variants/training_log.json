@@ -1,0 +1,744 @@
+{
+  "provenance": "Extracted verbatim displayed HTML log tables from saved executed Colab notebook; values retain displayed precision. Not the full raw trainer.state.log_history; intermediate updates may repeat.",
+  "notebook": "colab/Lab22_BuiTienCuong_2A202602539_T4.ipynb",
+  "cell_index": 113,
+  "tables": [
+    {
+      "output_index": 18,
+      "columns": [
+        "Step",
+        "Training Loss",
+        "rewards / chosen",
+        "rewards / rejected",
+        "rewards / accuracies",
+        "rewards / margins",
+        "logits / chosen",
+        "logits / rejected",
+        "logps / chosen",
+        "logps / rejected"
+      ],
+      "rows": [
+        {
+          "Step": "5",
+          "Training Loss": "0.692963",
+          "rewards / chosen": "0.000133",
+          "rewards / rejected": "-0.000264",
+          "rewards / accuracies": "0.575000",
+          "rewards / margins": "0.000397",
+          "logits / chosen": "-1.854810",
+          "logits / rejected": "-1.723827",
+          "logps / chosen": "-325.729917",
+          "logps / rejected": "-255.155764"
+        },
+        {
+          "Step": "10",
+          "Training Loss": "0.691725",
+          "rewards / chosen": "0.010423",
+          "rewards / rejected": "0.007464",
+          "rewards / accuracies": "0.650000",
+          "rewards / margins": "0.002959",
+          "logits / chosen": "-2.031568",
+          "logits / rejected": "-1.949621",
+          "logps / chosen": "-362.855924",
+          "logps / rejected": "-287.672625"
+        },
+        {
+          "Step": "15",
+          "Training Loss": "0.692059",
+          "rewards / chosen": "0.026454",
+          "rewards / rejected": "0.024140",
+          "rewards / accuracies": "0.600000",
+          "rewards / margins": "0.002313",
+          "logits / chosen": "-2.266502",
+          "logits / rejected": "-2.121767",
+          "logps / chosen": "-357.012024",
+          "logps / rejected": "-327.611330"
+        },
+        {
+          "Step": "20",
+          "Training Loss": "0.688411",
+          "rewards / chosen": "0.049314",
+          "rewards / rejected": "0.039643",
+          "rewards / accuracies": "0.650000",
+          "rewards / margins": "0.009670",
+          "logits / chosen": "-2.242499",
+          "logits / rejected": "-1.860147",
+          "logps / chosen": "-360.342801",
+          "logps / rejected": "-321.628566"
+        },
+        {
+          "Step": "25",
+          "Training Loss": "0.686739",
+          "rewards / chosen": "0.073902",
+          "rewards / rejected": "0.060649",
+          "rewards / accuracies": "0.600000",
+          "rewards / margins": "0.013253",
+          "logits / chosen": "-2.017726",
+          "logits / rejected": "-2.009095",
+          "logps / chosen": "-399.070354",
+          "logps / rejected": "-389.452494"
+        },
+        {
+          "Step": "30",
+          "Training Loss": "0.686939",
+          "rewards / chosen": "0.058806",
+          "rewards / rejected": "0.046072",
+          "rewards / accuracies": "0.725000",
+          "rewards / margins": "0.012734",
+          "logits / chosen": "-1.992512",
+          "logits / rejected": "-2.003650",
+          "logps / chosen": "-276.640844",
+          "logps / rejected": "-237.929908"
+        },
+        {
+          "Step": "35",
+          "Training Loss": "0.686565",
+          "rewards / chosen": "0.082240",
+          "rewards / rejected": "0.068676",
+          "rewards / accuracies": "0.575000",
+          "rewards / margins": "0.013564",
+          "logits / chosen": "-1.996604",
+          "logits / rejected": "-1.977597",
+          "logps / chosen": "-328.057292",
+          "logps / rejected": "-293.547618"
+        }
+      ]
+    },
+    {
+      "output_index": 20,
+      "columns": [
+        "Training Loss",
+        "Validation Loss",
+        "Step",
+        "Entropy",
+        "Num Tokens",
+        "Logits/chosen",
+        "Logits/rejected",
+        "Mean Token Accuracy",
+        "Rewards/chosen",
+        "Rewards/rejected",
+        "Rewards/accuracies",
+        "Rewards/margins",
+        "Logps/chosen",
+        "Logps/rejected"
+      ],
+      "rows": [
+        {
+          "Training Loss": "0.686565",
+          "Validation Loss": "0.679347",
+          "Step": "38",
+          "Entropy": "1.508060",
+          "Num Tokens": "212004.000000",
+          "Logits/chosen": "-2.138416",
+          "Logits/rejected": "-2.130193",
+          "Mean Token Accuracy": "0.619519",
+          "Rewards/chosen": "0.093703",
+          "Rewards/rejected": "0.065308",
+          "Rewards/accuracies": "0.720000",
+          "Rewards/margins": "0.028395",
+          "Logps/chosen": "-389.423911",
+          "Logps/rejected": "-328.208644"
+        }
+      ]
+    },
+    {
+      "output_index": 39,
+      "columns": [
+        "Step",
+        "Training Loss",
+        "rewards / chosen",
+        "rewards / rejected",
+        "rewards / accuracies",
+        "rewards / margins",
+        "logits / chosen",
+        "logits / rejected",
+        "logps / chosen",
+        "logps / rejected"
+      ],
+      "rows": [
+        {
+          "Step": "5",
+          "Training Loss": "2.347045",
+          "rewards / chosen": "0.002470",
+          "rewards / rejected": "0.001888",
+          "rewards / accuracies": "0.575000",
+          "rewards / margins": "0.000582",
+          "logits / chosen": "-1.854912",
+          "logits / rejected": "-1.723807",
+          "logps / chosen": "-325.706547",
+          "logps / rejected": "-255.134240"
+        },
+        {
+          "Step": "10",
+          "Training Loss": "2.462836",
+          "rewards / chosen": "0.057969",
+          "rewards / rejected": "0.053862",
+          "rewards / accuracies": "0.700000",
+          "rewards / margins": "0.004107",
+          "logits / chosen": "-2.032295",
+          "logits / rejected": "-1.950310",
+          "logps / chosen": "-362.380466",
+          "logps / rejected": "-287.208646"
+        },
+        {
+          "Step": "15",
+          "Training Loss": "2.483150",
+          "rewards / chosen": "0.175422",
+          "rewards / rejected": "0.170513",
+          "rewards / accuracies": "0.500000",
+          "rewards / margins": "0.004909",
+          "logits / chosen": "-2.269232",
+          "logits / rejected": "-2.124990",
+          "logps / chosen": "-355.522343",
+          "logps / rejected": "-326.147607"
+        },
+        {
+          "Step": "20",
+          "Training Loss": "2.464082",
+          "rewards / chosen": "0.310639",
+          "rewards / rejected": "0.294109",
+          "rewards / accuracies": "0.650000",
+          "rewards / margins": "0.016530",
+          "logits / chosen": "-2.246858",
+          "logits / rejected": "-1.864719",
+          "logps / chosen": "-357.729548",
+          "logps / rejected": "-319.083914"
+        },
+        {
+          "Step": "25",
+          "Training Loss": "2.303550",
+          "rewards / chosen": "0.428292",
+          "rewards / rejected": "0.400593",
+          "rewards / accuracies": "0.625000",
+          "rewards / margins": "0.027699",
+          "logits / chosen": "-2.025889",
+          "logits / rejected": "-2.017195",
+          "logps / chosen": "-395.526457",
+          "logps / rejected": "-386.053052"
+        },
+        {
+          "Step": "30",
+          "Training Loss": "2.273725",
+          "rewards / chosen": "0.468388",
+          "rewards / rejected": "0.434695",
+          "rewards / accuracies": "0.725000",
+          "rewards / margins": "0.033694",
+          "logits / chosen": "-2.002561",
+          "logits / rejected": "-2.012958",
+          "logps / chosen": "-272.545022",
+          "logps / rejected": "-234.043680"
+        },
+        {
+          "Step": "35",
+          "Training Loss": "2.421750",
+          "rewards / chosen": "0.535879",
+          "rewards / rejected": "0.509532",
+          "rewards / accuracies": "0.500000",
+          "rewards / margins": "0.026348",
+          "logits / chosen": "-2.007665",
+          "logits / rejected": "-1.988533",
+          "logps / chosen": "-323.520893",
+          "logps / rejected": "-289.139058"
+        }
+      ]
+    },
+    {
+      "output_index": 41,
+      "columns": [
+        "Training Loss",
+        "Validation Loss",
+        "Step",
+        "Entropy",
+        "Num Tokens",
+        "Logits/chosen",
+        "Logits/rejected",
+        "Mean Token Accuracy",
+        "Rewards/chosen",
+        "Rewards/rejected",
+        "Rewards/accuracies",
+        "Rewards/margins",
+        "Logps/chosen",
+        "Logps/rejected"
+      ],
+      "rows": [
+        {
+          "Training Loss": "2.421750",
+          "Validation Loss": "2.407445",
+          "Step": "38",
+          "Entropy": "1.510279",
+          "Num Tokens": "212004.000000",
+          "Logits/chosen": "-2.147581",
+          "Logits/rejected": "-2.140112",
+          "Mean Token Accuracy": "0.619815",
+          "Rewards/chosen": "0.582484",
+          "Rewards/rejected": "0.542270",
+          "Rewards/accuracies": "0.670000",
+          "Rewards/margins": "0.040214",
+          "Logps/chosen": "-384.536098",
+          "Logps/rejected": "-323.439023"
+        }
+      ]
+    },
+    {
+      "output_index": 60,
+      "columns": [
+        "Step",
+        "Training Loss",
+        "rewards / chosen",
+        "rewards / rejected",
+        "rewards / accuracies",
+        "rewards / margins",
+        "logits / chosen",
+        "logits / rejected",
+        "logps / chosen",
+        "logps / rejected"
+      ],
+      "rows": [
+        {
+          "Step": "5",
+          "Training Loss": "0.693139",
+          "rewards / chosen": "-0.000288",
+          "rewards / rejected": "-0.001763",
+          "rewards / accuracies": "0.600000",
+          "rewards / margins": "0.001474",
+          "logits / chosen": "-1.854577",
+          "logits / rejected": "-1.723511",
+          "logps / chosen": "-325.734133",
+          "logps / rejected": "-255.170751"
+        },
+        {
+          "Step": "10",
+          "Training Loss": "0.693130",
+          "rewards / chosen": "-0.020870",
+          "rewards / rejected": "-0.019565",
+          "rewards / accuracies": "0.475000",
+          "rewards / margins": "-0.001305",
+          "logits / chosen": "-2.030460",
+          "logits / rejected": "-1.948082",
+          "logps / chosen": "-363.168856",
+          "logps / rejected": "-287.942914"
+        },
+        {
+          "Step": "15",
+          "Training Loss": "0.693058",
+          "rewards / chosen": "-0.071497",
+          "rewards / rejected": "-0.069122",
+          "rewards / accuracies": "0.425000",
+          "rewards / margins": "-0.002376",
+          "logits / chosen": "-2.263577",
+          "logits / rejected": "-2.118331",
+          "logps / chosen": "-357.991535",
+          "logps / rejected": "-328.543951"
+        },
+        {
+          "Step": "20",
+          "Training Loss": "0.692876",
+          "rewards / chosen": "-0.120732",
+          "rewards / rejected": "-0.119818",
+          "rewards / accuracies": "0.550000",
+          "rewards / margins": "-0.000914",
+          "logits / chosen": "-2.238892",
+          "logits / rejected": "-1.856345",
+          "logps / chosen": "-362.043258",
+          "logps / rejected": "-323.223176"
+        },
+        {
+          "Step": "25",
+          "Training Loss": "0.693034",
+          "rewards / chosen": "-0.153215",
+          "rewards / rejected": "-0.152629",
+          "rewards / accuracies": "0.550000",
+          "rewards / margins": "-0.000586",
+          "logits / chosen": "-2.012867",
+          "logits / rejected": "-2.004519",
+          "logps / chosen": "-401.341523",
+          "logps / rejected": "-391.585274"
+        },
+        {
+          "Step": "30",
+          "Training Loss": "0.693204",
+          "rewards / chosen": "-0.176839",
+          "rewards / rejected": "-0.177207",
+          "rewards / accuracies": "0.550000",
+          "rewards / margins": "0.000368",
+          "logits / chosen": "-1.988270",
+          "logits / rejected": "-1.999767",
+          "logps / chosen": "-278.997295",
+          "logps / rejected": "-240.162698"
+        },
+        {
+          "Step": "35",
+          "Training Loss": "0.693096",
+          "rewards / chosen": "-0.173886",
+          "rewards / rejected": "-0.177022",
+          "rewards / accuracies": "0.550000",
+          "rewards / margins": "0.003136",
+          "logits / chosen": "-1.991997",
+          "logits / rejected": "-1.973361",
+          "logps / chosen": "-330.618548",
+          "logps / rejected": "-296.004599"
+        }
+      ]
+    },
+    {
+      "output_index": 62,
+      "columns": [
+        "Training Loss",
+        "Validation Loss",
+        "Step",
+        "Entropy",
+        "Num Tokens",
+        "Logits/chosen",
+        "Logits/rejected",
+        "Mean Token Accuracy",
+        "Rewards/chosen",
+        "Rewards/rejected",
+        "Rewards/accuracies",
+        "Rewards/margins",
+        "Logps/chosen",
+        "Logps/rejected"
+      ],
+      "rows": [
+        {
+          "Training Loss": "0.693096",
+          "Validation Loss": "0.692927",
+          "Step": "38",
+          "Entropy": "1.506089",
+          "Num Tokens": "212004.000000",
+          "Logits/chosen": "-2.135247",
+          "Logits/rejected": "-2.126496",
+          "Mean Token Accuracy": "0.618863",
+          "Rewards/chosen": "-0.187223",
+          "Rewards/rejected": "-0.197937",
+          "Rewards/accuracies": "0.640000",
+          "Rewards/margins": "0.010714",
+          "Logps/chosen": "-392.233172",
+          "Logps/rejected": "-330.841092"
+        }
+      ]
+    },
+    {
+      "output_index": 81,
+      "columns": [
+        "Step",
+        "Training Loss",
+        "rewards / chosen",
+        "rewards / rejected",
+        "rewards / accuracies",
+        "rewards / margins",
+        "logits / chosen",
+        "logits / rejected",
+        "logps / chosen",
+        "logps / rejected"
+      ],
+      "rows": [
+        {
+          "Step": "5",
+          "Training Loss": "0.693632",
+          "rewards / chosen": "-0.002452",
+          "rewards / rejected": "-0.001571",
+          "rewards / accuracies": "0.550000",
+          "rewards / margins": "-0.000881",
+          "logits / chosen": "-1.854702",
+          "logits / rejected": "-1.723731",
+          "logps / chosen": "-276.618266",
+          "logps / rejected": "-247.596955"
+        },
+        {
+          "Step": "10",
+          "Training Loss": "0.690920",
+          "rewards / chosen": "-0.020505",
+          "rewards / rejected": "-0.025354",
+          "rewards / accuracies": "0.625000",
+          "rewards / margins": "0.004848",
+          "logits / chosen": "-2.030687",
+          "logits / rejected": "-1.948501",
+          "logps / chosen": "-307.475365",
+          "logps / rejected": "-282.880490"
+        },
+        {
+          "Step": "15",
+          "Training Loss": "0.682495",
+          "rewards / chosen": "-0.053265",
+          "rewards / rejected": "-0.075640",
+          "rewards / accuracies": "0.675000",
+          "rewards / margins": "0.022374",
+          "logits / chosen": "-2.263367",
+          "logits / rejected": "-2.118241",
+          "logps / chosen": "-318.404530",
+          "logps / rejected": "-312.213040"
+        },
+        {
+          "Step": "20",
+          "Training Loss": "0.682468",
+          "rewards / chosen": "-0.092839",
+          "rewards / rejected": "-0.116315",
+          "rewards / accuracies": "0.600000",
+          "rewards / margins": "0.023476",
+          "logits / chosen": "-2.238554",
+          "logits / rejected": "-1.855012",
+          "logps / chosen": "-328.086200",
+          "logps / rejected": "-315.668618"
+        },
+        {
+          "Step": "25",
+          "Training Loss": "0.672395",
+          "rewards / chosen": "-0.091915",
+          "rewards / rejected": "-0.136324",
+          "rewards / accuracies": "0.700000",
+          "rewards / margins": "0.044409",
+          "logits / chosen": "-2.010765",
+          "logits / rejected": "-2.001923",
+          "logps / chosen": "-359.796490",
+          "logps / rejected": "-373.508548"
+        },
+        {
+          "Step": "30",
+          "Training Loss": "0.674711",
+          "rewards / chosen": "-0.116594",
+          "rewards / rejected": "-0.157376",
+          "rewards / accuracies": "0.675000",
+          "rewards / margins": "0.040783",
+          "logits / chosen": "-1.984892",
+          "logits / rejected": "-1.996173",
+          "logps / chosen": "-248.511250",
+          "logps / rejected": "-235.614388"
+        },
+        {
+          "Step": "35",
+          "Training Loss": "0.677379",
+          "rewards / chosen": "-0.118112",
+          "rewards / rejected": "-0.153871",
+          "rewards / accuracies": "0.625000",
+          "rewards / margins": "0.035759",
+          "logits / chosen": "-1.988793",
+          "logits / rejected": "-1.970036",
+          "logps / chosen": "-293.885811",
+          "logps / rejected": "-285.755901"
+        }
+      ]
+    },
+    {
+      "output_index": 83,
+      "columns": [
+        "Training Loss",
+        "Validation Loss",
+        "Step",
+        "Entropy",
+        "Num Tokens",
+        "Logits/chosen",
+        "Logits/rejected",
+        "Mean Token Accuracy",
+        "Rewards/chosen",
+        "Rewards/rejected",
+        "Rewards/accuracies",
+        "Rewards/margins",
+        "Logps/chosen",
+        "Logps/rejected"
+      ],
+      "rows": [
+        {
+          "Training Loss": "0.677379",
+          "Validation Loss": "0.682059",
+          "Step": "38",
+          "Entropy": "1.507900",
+          "Num Tokens": "212004.000000",
+          "Logits/chosen": "-2.132239",
+          "Logits/rejected": "-2.123263",
+          "Mean Token Accuracy": "0.619545",
+          "Rewards/chosen": "-0.137110",
+          "Rewards/rejected": "-0.164476",
+          "Rewards/accuracies": "0.560000",
+          "Rewards/margins": "0.027366",
+          "Logps/chosen": "-341.983289",
+          "Logps/rejected": "-321.137728"
+        }
+      ]
+    },
+    {
+      "output_index": 97,
+      "columns": [
+        "Step",
+        "Training Loss",
+        "rewards / chosen",
+        "rewards / rejected",
+        "rewards / accuracies",
+        "rewards / margins",
+        "logits / chosen",
+        "logits / rejected",
+        "logps / chosen",
+        "logps / rejected"
+      ],
+      "rows": [
+        {
+          "Step": "5",
+          "Training Loss": "2.179083",
+          "rewards / chosen": "-0.170627",
+          "rewards / rejected": "-0.194206",
+          "rewards / accuracies": "0.725000",
+          "rewards / margins": "0.023579",
+          "logits / chosen": "-2.364669",
+          "logits / rejected": "-2.099396",
+          "logps / chosen": "-1.706268",
+          "logps / rejected": "-1.942062"
+        },
+        {
+          "Step": "10",
+          "Training Loss": "2.146705",
+          "rewards / chosen": "-0.181248",
+          "rewards / rejected": "-0.198663",
+          "rewards / accuracies": "0.700000",
+          "rewards / margins": "0.017415",
+          "logits / chosen": "-2.685518",
+          "logits / rejected": "-2.395674",
+          "logps / chosen": "-1.812478",
+          "logps / rejected": "-1.986626"
+        }
+      ]
+    },
+    {
+      "output_index": 98,
+      "columns": [
+        "Step",
+        "Training Loss",
+        "rewards / chosen",
+        "rewards / rejected",
+        "rewards / accuracies",
+        "rewards / margins",
+        "logits / chosen",
+        "logits / rejected",
+        "logps / chosen",
+        "logps / rejected"
+      ],
+      "rows": [
+        {
+          "Step": "5",
+          "Training Loss": "2.179083",
+          "rewards / chosen": "-0.170627",
+          "rewards / rejected": "-0.194206",
+          "rewards / accuracies": "0.725000",
+          "rewards / margins": "0.023579",
+          "logits / chosen": "-2.364669",
+          "logits / rejected": "-2.099396",
+          "logps / chosen": "-1.706268",
+          "logps / rejected": "-1.942062"
+        },
+        {
+          "Step": "10",
+          "Training Loss": "2.146705",
+          "rewards / chosen": "-0.181248",
+          "rewards / rejected": "-0.198663",
+          "rewards / accuracies": "0.700000",
+          "rewards / margins": "0.017415",
+          "logits / chosen": "-2.685518",
+          "logits / rejected": "-2.395674",
+          "logps / chosen": "-1.812478",
+          "logps / rejected": "-1.986626"
+        },
+        {
+          "Step": "15",
+          "Training Loss": "2.326496",
+          "rewards / chosen": "-0.181069",
+          "rewards / rejected": "-0.202691",
+          "rewards / accuracies": "0.775000",
+          "rewards / margins": "0.021622",
+          "logits / chosen": "-2.652711",
+          "logits / rejected": "-2.344073",
+          "logps / chosen": "-1.810686",
+          "logps / rejected": "-2.026910"
+        },
+        {
+          "Step": "20",
+          "Training Loss": "2.252494",
+          "rewards / chosen": "-0.177510",
+          "rewards / rejected": "-0.203725",
+          "rewards / accuracies": "0.625000",
+          "rewards / margins": "0.026214",
+          "logits / chosen": "-2.572491",
+          "logits / rejected": "-2.359549",
+          "logps / chosen": "-1.775103",
+          "logps / rejected": "-2.037245"
+        },
+        {
+          "Step": "25",
+          "Training Loss": "2.102825",
+          "rewards / chosen": "-0.161173",
+          "rewards / rejected": "-0.191912",
+          "rewards / accuracies": "0.725000",
+          "rewards / margins": "0.030739",
+          "logits / chosen": "-2.663658",
+          "logits / rejected": "-2.424798",
+          "logps / chosen": "-1.611730",
+          "logps / rejected": "-1.919116"
+        },
+        {
+          "Step": "30",
+          "Training Loss": "1.986104",
+          "rewards / chosen": "-0.157520",
+          "rewards / rejected": "-0.165495",
+          "rewards / accuracies": "0.575000",
+          "rewards / margins": "0.007975",
+          "logits / chosen": "-2.645377",
+          "logits / rejected": "-2.509029",
+          "logps / chosen": "-1.575196",
+          "logps / rejected": "-1.654945"
+        },
+        {
+          "Step": "35",
+          "Training Loss": "2.133704",
+          "rewards / chosen": "-0.171055",
+          "rewards / rejected": "-0.186515",
+          "rewards / accuracies": "0.650000",
+          "rewards / margins": "0.015460",
+          "logits / chosen": "-2.508580",
+          "logits / rejected": "-2.402406",
+          "logps / chosen": "-1.710548",
+          "logps / rejected": "-1.865152"
+        }
+      ]
+    },
+    {
+      "output_index": 100,
+      "columns": [
+        "Training Loss",
+        "Validation Loss",
+        "Step",
+        "Runtime",
+        "Samples Per Second",
+        "Steps Per Second",
+        "Rewards/chosen",
+        "Rewards/rejected",
+        "Rewards/accuracies",
+        "Rewards/margins",
+        "Logps/rejected",
+        "Logps/chosen",
+        "Logits/rejected",
+        "Logits/chosen",
+        "Nll Loss",
+        "Log Odds Ratio",
+        "Log Odds Chosen"
+      ],
+      "rows": [
+        {
+          "Training Loss": "2.133704",
+          "Validation Loss": "2.137643",
+          "Step": "38",
+          "Runtime": "47.827100",
+          "Samples Per Second": "2.091000",
+          "Steps Per Second": "2.091000",
+          "Rewards/chosen": "-0.171773",
+          "Rewards/rejected": "-0.186883",
+          "Rewards/accuracies": "0.650000",
+          "Rewards/margins": "0.015110",
+          "Logps/rejected": "-1.868832",
+          "Logps/chosen": "-1.717734",
+          "Logits/rejected": "-2.686812",
+          "Logits/chosen": "-2.670098",
+          "Nll Loss": "2.075187",
+          "Log Odds Ratio": "-0.624567",
+          "Log Odds Chosen": "0.180184"
+        }
+      ]
+    }
+  ]
+}

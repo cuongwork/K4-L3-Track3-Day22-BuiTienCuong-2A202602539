@@ -26,5 +26,26 @@ Adapter config giữ nguyên đường dẫn huấn luyện `/content/lab22/mode
 Muốn kiểm tra đúng môi trường gốc, chạy `python scripts/verify.py` tại `/content/lab22` sau khi tạo các artifact trong Colab.
 Không sửa config hoặc nới điều kiện verifier để che lỗi di chuyển đường dẫn.
 
-Bonus đang chạy được lưu riêng; chỉ tính sau khi đủ metrics, ảnh và phân tích rồi push.
-Điểm trừ nộp muộn phụ thuộc thời điểm nộp và cách giảng viên áp dụng rubric; không suy ra điểm chính thức từ giờ commit.
+## Hình thức nộp theo README §4
+
+- Nộp URL repo public vào LMS: https://github.com/cuongwork/K4-L3-Track3-Day22-BuiTienCuong-2A202602539
+- Hướng dẫn trong repo không cung cấp URL form riêng. Chưa kiểm tra giao diện LMS hoặc xác nhận đã bấm nộp trên LMS.
+- Giữ repo public đến khi có điểm. Chỉ artifact đã commit được tính; file còn trong Colab hoặc Downloads chưa đủ.
+- Không có yêu cầu nộp PDF, DOCX hay ZIP lên LMS. ZIP là phương tiện tải kết quả từ Colab về để đưa vào repo.
+- Không commit trọng số, `.env` hoặc khóa API. Theo danh sách cho phép trong `.gitignore`, giữ các JSON cấu hình, split, metrics và training log nhỏ.
+
+## Artifact bản cuối
+
+| Artifact | Trạng thái |
+|---|---|
+| Colab NB0–NB4 và bonus có output | Notebook kết hợp có output thực; NB3b có dòng `NB3b COMPLETE` |
+| 4 ảnh core, ảnh β, ảnh 5 biến thể | Đủ file; ảnh NB3b lấy trực tiếp output PNG của Colab |
+| `06-gguf-smoke.png` | Ảnh chụp trình duyệt thật, có cell GGUF/Q4_K_M và câu trả lời |
+| `REFLECTION.md`, `REPORT.md` | Đã cập nhật số liệu thực, bảng 5 biến thể và phân tích độ dài |
+| Training log JSON | Bảng log HTML được trích từ notebook, có provenance và độ chính xác hiển thị; không phải toàn bộ log thô |
+| β sweep (+6), GGUF (+4), 5 biến thể (+8) | Đã có output, số liệu, ảnh và phân tích; điểm do giảng viên chấm |
+| Runtime/trọng số | Phiên GPU đã kết thúc, GPU hết hạn mức; không còn artifact runtime để thu hồi log thô/trọng số |
+| Tái lập sạch | Đã loại phụ thuộc file upload khỏi source notebook; chưa chạy lại toàn bộ trên runtime sạch |
+| LMS | Người học nộp URL repo public; chưa xác nhận nộp trên LMS |
+
+Notebook cuối giữ output thực đã lưu, đồng bộ helper/source và phản tư để chạy lại; bỏ hai cell vận chuyển ảnh/xuất artifact chưa chạy. Không chỉnh hay tạo lại output để giả bằng chứng. `BONUS-CHALLENGE.md` là thử thách riêng không chấm điểm. Điểm trừ muộn do giảng viên quyết định.

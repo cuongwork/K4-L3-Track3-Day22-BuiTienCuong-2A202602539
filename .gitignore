@@ -28,6 +28,10 @@ adapters/*/*
 !adapters/*/split.json
 !adapters/*/variants_summary.json
 !adapters/*/grpo_metrics.json
+!adapters/variants/*/
+adapters/variants/*/*
+!adapters/variants/*/adapter_config.json
+!adapters/variants/*/training_log.json
 data/pref/*
 !data/pref/*.parquet
 !data/pref/stats.json

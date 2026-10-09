@@ -1,0 +1,198 @@
+{
+  "provenance": "Extracted verbatim displayed HTML log tables from saved executed Colab notebook; values retain displayed precision. Not the full raw trainer.state.log_history; intermediate updates may repeat.",
+  "notebook": "colab/Lab22_BuiTienCuong_2A202602539_T4.ipynb",
+  "cell_index": 88,
+  "tables": [
+    {
+      "output_index": 15,
+      "columns": [
+        "Step",
+        "Training Loss",
+        "Validation Loss",
+        "Entropy",
+        "Num Tokens",
+        "Logits/chosen",
+        "Logits/rejected",
+        "Mean Token Accuracy",
+        "Rewards/chosen",
+        "Rewards/rejected",
+        "Rewards/accuracies",
+        "Rewards/margins",
+        "Logps/chosen",
+        "Logps/rejected"
+      ],
+      "rows": [
+        {
+          "Step": "25",
+          "Training Loss": "0.688285",
+          "Validation Loss": "0.685441",
+          "Entropy": "1.507624",
+          "Num Tokens": "145434.000000",
+          "Logits/chosen": "-2.139213",
+          "Logits/rejected": "-2.131195",
+          "Mean Token Accuracy": "0.619592",
+          "Rewards/chosen": "0.084420",
+          "Rewards/rejected": "0.068660",
+          "Rewards/accuracies": "0.620000",
+          "Rewards/margins": "0.015760",
+          "Logps/chosen": "-389.516737",
+          "Logps/rejected": "-328.175115"
+        },
+        {
+          "Step": "50",
+          "Training Loss": "0.676325",
+          "Validation Loss": "0.665518",
+          "Entropy": "1.507379",
+          "Num Tokens": "278676.000000",
+          "Logits/chosen": "-2.148333",
+          "Logits/rejected": "-2.140862",
+          "Mean Token Accuracy": "0.619751",
+          "Rewards/chosen": "0.279797",
+          "Rewards/rejected": "0.220616",
+          "Rewards/accuracies": "0.700000",
+          "Rewards/margins": "0.059181",
+          "Logps/chosen": "-387.562968",
+          "Logps/rejected": "-326.655560"
+        },
+        {
+          "Step": "75",
+          "Training Loss": "0.658201",
+          "Validation Loss": "0.655894",
+          "Entropy": "1.506649",
+          "Num Tokens": "423394.000000",
+          "Logits/chosen": "-2.152433",
+          "Logits/rejected": "-2.145215",
+          "Mean Token Accuracy": "0.619916",
+          "Rewards/chosen": "0.386109",
+          "Rewards/rejected": "0.303945",
+          "Rewards/accuracies": "0.700000",
+          "Rewards/margins": "0.082164",
+          "Logps/chosen": "-386.499848",
+          "Logps/rejected": "-325.822274"
+        }
+      ]
+    },
+    {
+      "output_index": 16,
+      "columns": [
+        "Step",
+        "Training Loss",
+        "Validation Loss",
+        "Entropy",
+        "Num Tokens",
+        "Logits/chosen",
+        "Logits/rejected",
+        "Mean Token Accuracy",
+        "Rewards/chosen",
+        "Rewards/rejected",
+        "Rewards/accuracies",
+        "Rewards/margins",
+        "Logps/chosen",
+        "Logps/rejected"
+      ],
+      "rows": [
+        {
+          "Step": "25",
+          "Training Loss": "0.688285",
+          "Validation Loss": "0.685441",
+          "Entropy": "1.507624",
+          "Num Tokens": "145434.000000",
+          "Logits/chosen": "-2.139213",
+          "Logits/rejected": "-2.131195",
+          "Mean Token Accuracy": "0.619592",
+          "Rewards/chosen": "0.084420",
+          "Rewards/rejected": "0.068660",
+          "Rewards/accuracies": "0.620000",
+          "Rewards/margins": "0.015760",
+          "Logps/chosen": "-389.516737",
+          "Logps/rejected": "-328.175115"
+        },
+        {
+          "Step": "50",
+          "Training Loss": "0.676325",
+          "Validation Loss": "0.665518",
+          "Entropy": "1.507379",
+          "Num Tokens": "278676.000000",
+          "Logits/chosen": "-2.148333",
+          "Logits/rejected": "-2.140862",
+          "Mean Token Accuracy": "0.619751",
+          "Rewards/chosen": "0.279797",
+          "Rewards/rejected": "0.220616",
+          "Rewards/accuracies": "0.700000",
+          "Rewards/margins": "0.059181",
+          "Logps/chosen": "-387.562968",
+          "Logps/rejected": "-326.655560"
+        },
+        {
+          "Step": "75",
+          "Training Loss": "0.658201",
+          "Validation Loss": "0.655894",
+          "Entropy": "1.506649",
+          "Num Tokens": "423394.000000",
+          "Logits/chosen": "-2.152433",
+          "Logits/rejected": "-2.145215",
+          "Mean Token Accuracy": "0.619916",
+          "Rewards/chosen": "0.386109",
+          "Rewards/rejected": "0.303945",
+          "Rewards/accuracies": "0.700000",
+          "Rewards/margins": "0.082164",
+          "Logps/chosen": "-386.499848",
+          "Logps/rejected": "-325.822274"
+        },
+        {
+          "Step": "100",
+          "Training Loss": "0.650657",
+          "Validation Loss": "0.653299",
+          "Entropy": "1.506678",
+          "Num Tokens": "557774.000000",
+          "Logits/chosen": "-2.153404",
+          "Logits/rejected": "-2.146213",
+          "Mean Token Accuracy": "0.619896",
+          "Rewards/chosen": "0.407970",
+          "Rewards/rejected": "0.319731",
+          "Rewards/accuracies": "0.660000",
+          "Rewards/margins": "0.088239",
+          "Logps/chosen": "-386.281241",
+          "Logps/rejected": "-325.664409"
+        }
+      ]
+    },
+    {
+      "output_index": 18,
+      "columns": [
+        "Training Loss",
+        "Validation Loss",
+        "Step",
+        "Entropy",
+        "Num Tokens",
+        "Logits/chosen",
+        "Logits/rejected",
+        "Mean Token Accuracy",
+        "Rewards/chosen",
+        "Rewards/rejected",
+        "Rewards/accuracies",
+        "Rewards/margins",
+        "Logps/chosen",
+        "Logps/rejected"
+      ],
+      "rows": [
+        {
+          "Training Loss": "0.650657",
+          "Validation Loss": "0.653299",
+          "Step": "100",
+          "Entropy": "1.506678",
+          "Num Tokens": "557774.000000",
+          "Logits/chosen": "-2.153404",
+          "Logits/rejected": "-2.146213",
+          "Mean Token Accuracy": "0.619896",
+          "Rewards/chosen": "0.407970",
+          "Rewards/rejected": "0.319731",
+          "Rewards/accuracies": "0.660000",
+          "Rewards/margins": "0.088239",
+          "Logps/chosen": "-386.281241",
+          "Logps/rejected": "-325.664409"
+        }
+      ]
+    }
+  ]
+}

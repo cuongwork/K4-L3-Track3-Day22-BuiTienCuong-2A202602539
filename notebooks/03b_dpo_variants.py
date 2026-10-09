@@ -65,7 +65,8 @@ import json
 
 from trl import DPOTrainer
 
-results = {}
+results = json.loads((C.VARIANTS_DIR / "variants_summary.json").read_text()) if (C.VARIANTS_DIR / "variants_summary.json").exists() else {}
+SELECTED = [name for name in SELECTED if name not in results]
 for name in [r for r in SELECTED if r in RUNS]:
     print(f"\n=== {name} ===")
     model, tokenizer = MD.load_model(C.SFT_MERGED)
@@ -74,7 +75,7 @@ for name in [r for r in SELECTED if r in RUNS]:
     loss_type = overrides.pop("loss_type")
     trainer = DPOTrainer(
         model=model,
-        args=MD.dpo_config(C.VARIANTS_DIR / f"{name}-ckpt", loss_type=loss_type, eval_strategy="no", **overrides),
+        args=MD.dpo_config(C.VARIANTS_DIR / f"{name}-ckpt", loss_type=loss_type, eval_strategy="no", precompute_ref_batch_size=1, **overrides),
         train_dataset=train_ds,
         eval_dataset=eval_ds,
         processing_class=tokenizer,
@@ -90,6 +91,9 @@ for name in [r for r in SELECTED if r in RUNS]:
         "diagnosis": MD.diagnose(MD.reward_history(trainer.state.log_history))[0],
     }
     trainer.model.save_pretrained(str(C.VARIANTS_DIR / name))
+    results[name]["eval_reward_gap"] = ev.get("eval_rewards/margins")
+    (C.VARIANTS_DIR / "variants_summary.json").write_text(json.dumps(results, indent=2, default=str))
+    (C.VARIANTS_DIR / name / "training_log.json").write_text(json.dumps(trainer.state.log_history, indent=2))
     print(results[name])
     del trainer, model
     MD.cleanup()
@@ -135,6 +139,9 @@ if "orpo" in SELECTED:
         "mean_output_chars": sum(map(len, outputs)) / len(outputs),
     }
     trainer.model.save_pretrained(str(C.VARIANTS_DIR / "orpo"))
+    results["orpo"]["eval_reward_gap"] = ev.get("eval_rewards/margins")
+    (C.VARIANTS_DIR / "variants_summary.json").write_text(json.dumps(results, indent=2, default=str))
+    (C.VARIANTS_DIR / "orpo" / "training_log.json").write_text(json.dumps(trainer.state.log_history, indent=2))
     print(results["orpo"])
     del trainer, model
     MD.cleanup()

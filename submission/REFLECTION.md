@@ -6,7 +6,7 @@
 **Môi trường:** Google Colab T4
 **Ngày chạy:** 08–09/10/2026
 
-Số liệu lấy từ output notebook, `adapters/dpo/dpo_metrics.json`, `data/pref/stats.json` và `data/eval/judge_summary.json`. Đã hoàn thành NB0–NB4 và bổ sung quét β; các bonus khác chỉ ghi nhận sau khi chạy xong.
+Số liệu lấy từ output notebook, `adapters/dpo/dpo_metrics.json`, `data/pref/stats.json` và `data/eval/judge_summary.json`. Đã hoàn thành NB0–NB4, quét β, GGUF và năm biến thể loss. Ba mục bonus tương ứng tối đa +18 theo rubric; điểm thực tế do giảng viên chấm.
 
 ## 1. Cấu hình
 
@@ -97,9 +97,33 @@ Kết quả thực tế xác nhận T4 chạy được SFT đủ 125 bước v�
 
 ---
 
-## 7. Phạm vi bài nộp
+## 7. Bộ đo chuẩn (bonus NB6)
 
-Đã hoàn thành phần lõi và quét β. NB5 đã hoàn thành; NB3b đang được bổ sung; chưa thực hiện NB6, NB7, giám khảo API hoặc đẩy model lên Hugging Face.
+Không thực hiện NB6 trong phạm vi bài nộp này; không có kết quả IFEval, GSM8K hoặc Global-MMLU-vi để kết luận về alignment tax.
+
+## 8. Biến thể loss (bonus NB3b)
+
+Ảnh: `screenshots/03b-variants.png`; số liệu: `adapters/variants/variants_summary.json`. Cả năm lượt chạy xong trên cùng SFT đã gộp, 300 cặp train, 100 held-out, 20 prompt sinh, một epoch (38 bước), lr=5e-6, LoRA r=16, seed=42, greedy tối đa 256 token. Đây là thí nghiệm riêng, không thay thế NB3 bắt buộc dùng 800 cặp train. ORPO cũng xuất phát từ SFT, không phải base.
+
+| Loss | Accuracy held-out | Margin held-out | Độ dài trung bình (ký tự) | Nhận xét |
+|---|---:|---:|---:|---|
+| DPO | 72% | 0,028395 | 433,25 | Chosen/rejected dương |
+| RPO | 67% | 0,040214 | 452,00 | Chosen/rejected dương |
+| DPO-norm | 64% | 0,010714 | 430,00 | Likelihood displacement |
+| LD-DPO | 56% | 0,027366 | 471,70 | Likelihood displacement |
+| ORPO | 65% | 0,015110 | 361,20 | Không có reference; log-odds-ratio −0,624567 |
+
+LD-DPO cho đầu ra dài nhất: tăng 38,45 ký tự (+8,87%) so với DPO trong chính thí nghiệm này. RPO tăng 18,75 ký tự (+4,33%), DPO-norm giảm 3,25 ký tự và ORPO giảm 72,05 ký tự (−16,63%). Xu hướng LD-DPO phù hợp về hướng với dữ liệu NB2 có 65,875% chosen dài hơn, nhưng không chứng minh nguyên nhân. LD-DPO giảm trọng số phần token vượt độ dài chung; điều đó không áp đặt trực tiếp độ dài đầu ra. Phân bố dữ liệu, tối ưu loss và giới hạn sinh đều có thể ảnh hưởng kết quả. Chuẩn hoá log-prob theo token và thành phần NLL của ORPO có thể góp phần thay đổi độ dài; một seed và 20 prompt chưa đủ xác nhận cơ chế hay khái quát hoá.
+
+RPO giữ chosen held-out dương (0,582484), nhưng DPO cũng dương (0,093703), nên không thể nói RPO đã cứu một DPO bị giảm xác suất chosen. Ngược lại, DPO-norm có chosen −0,187223/rejected −0,197937 và LD-DPO có chosen −0,137110/rejected −0,164476: cả hai âm, rejected âm hơn, margin vẫn dương. Đây là ví dụ thực nghiệm cho likelihood displacement đã giải thích ở NB0. Reward ORPO dựa trên log-prob/odds, không phải log-ratio với SFT; không dùng dấu âm của nó để áp cùng chẩn đoán displacement của DPO.
+
+DPO đạt reward accuracy cao nhất trong bảng, nhưng không suy ra chất lượng sinh tốt nhất. Các loss dùng thang reward khác nhau nên margin thô không so trực tiếp. NB4 chỉ đánh giá adapter DPO core; chưa chạy giám khảo cho từng biến thể, chưa có CI hay nhiều seed cho bảng này. Vì vậy tôi xem đây là so sánh accuracy preference và độ dài, chưa xếp hạng chất lượng tổng quát.
+
+Phiên GPU kết thúc sau khi cả năm lượt hoàn tất và Colab báo hết hạn mức GPU. Notebook đã lưu output thực, bảng và ảnh; log JSON bổ sung được trích nguyên các bảng log HTML còn trong notebook, giữ độ chính xác hiển thị. Không khẳng định đó là toàn bộ `trainer.state.log_history` thô hay còn giữ trọng số của phiên đã mất.
+
+## 9. GRPO (bonus NB7)
+
+Không thực hiện NB7. Không có số liệu GRPO hoặc yêu cầu cộng điểm mục này.
 
 ---
 
